@@ -7,11 +7,11 @@ const portOne = 3000;
 const portTwo = 3001;
 const portThree = 3002;
 
-firstApp.get("/api/user", (req, res) => {
+firstApp.get("/api/user/new", (req, res) => {
   res.json(user);
 });
 
-secondApp.get("/api/company", (req, res) => {
+secondApp.get("/api/company/new", (req, res) => {
   res.json(company);
 });
 
