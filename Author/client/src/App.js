@@ -1,19 +1,19 @@
 import './App.css';
 import Main from './views/Main';
-import Detail from './views/Details';
 import Update from './views/Update';
+import AuthorForm from './views/AuthorForm';
 import { Router } from '@reach/router';
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 function App() {
   const [author, setAuthor] = useState([]);
   const removeFromDom = authorId => {
-    setAuthor(author.filter(author => author._id != authorId)); 
+    setAuthor(author.filter(author => author._id !== authorId)); 
 }
   return (
     <div className="App">
-       <Router>                           
-        <Main removeFromDom={removeFromDom} path="/author/"/>
-        <Detail removeFromDom={removeFromDom} path="/author/:id" />
+       <Router>
+        <AuthorForm path="/new"/>                        
+        <Main removeFromDom={removeFromDom} path="/"/>
         <Update path="/author/:id/edit"/>
       </Router>       
     </div>

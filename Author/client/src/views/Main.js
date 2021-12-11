@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import AuthorForm from '../components/AuthorForm';
 import AuthorList from '../components/AuthorList';
 import axios from 'axios'
+import { Link } from '@reach/router'
 
 const Main = (props) => {
     const {removeFromDom} = props;
@@ -17,10 +17,10 @@ const Main = (props) => {
 
     return (
         <div>
-            <AuthorForm/>
-            <hr/>
-            <h1>All Authors:</h1>
-           { loaded && <AuthorList author={author} removeFromDom={removeFromDom}/> }
+            <h1>Favorite Author</h1>
+            <Link to="/new">Add an author</Link>
+            <p>We have quotes by:</p>
+            {loaded && <AuthorList author={author} removeFromDom={removeFromDom}/> }
         </div>
     )
 }
